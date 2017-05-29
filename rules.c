@@ -206,6 +206,8 @@ void sepol_min_rules() {
 	if (sepol_exists("logd"))
 		sepol_allow("su", "logd", "unix_stream_socket", "connectto");
 	sepol_allow("su_device", "tmpfs", "filesystem", "associate");
+	sepol_allow(ALL, "labeledfs", "filesystem", "associate");
+	sepol_allow(ALL, "tmpfs", "filesystem", "associate");
 
 	// For sepolicy live patching
 	sepol_allow("su", "kernel", "security", "read_policy");
