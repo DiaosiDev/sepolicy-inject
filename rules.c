@@ -1,271 +1,263 @@
-#include "sepolicy-inject.h"
+#include "magiskpolicy.h"
+#include "sepolicy.h"
 
 void samsung() {
-	deny("init", "kernel", "security", "load_policy");
-	deny("policyloader_app", "security_spota_file", "dir", "read");
-	deny("policyloader_app", "security_spota_file", "dir", "write");
-	deny("policyloader_app", "security_spota_file", "file", "read");
-	deny("policyloader_app", "security_spota_file", "file", "write");
-	deny("system_server", "security_spota_file", "dir", "read");
-	deny("system_server", "security_spota_file", "dir", "write");
-	deny("system_server", "security_spota_file", "file", "read");
-	deny("system_server", "security_spota_file", "file", "write");
-	deny("system_app", "security_spota_file", "dir", "read");
-	deny("system_app", "security_spota_file", "dir", "write");
-	deny("system_app", "security_spota_file", "file", "read");
-	deny("system_app", "security_spota_file", "file", "write");
-	deny("installd", "security_spota_file", "dir", "read");
-	deny("installd", "security_spota_file", "dir", "write");
-	deny("installd", "security_spota_file", "file", "read");
-	deny("installd", "security_spota_file", "file", "write");
-	deny("init", "security_spota_file", "dir", "read");
-	deny("init", "security_spota_file", "dir", "write");
-	deny("init", "security_spota_file", "file", "read");
-	deny("init", "security_spota_file", "file", "write");
-	deny("ueventd", "security_spota_file", "dir", "read");
-	deny("ueventd", "security_spota_file", "dir", "write");
-	deny("ueventd", "security_spota_file", "file", "read");
-	deny("ueventd", "security_spota_file", "file", "write");
-	deny("runas", "security_spota_file", "dir", "read");
-	deny("runas", "security_spota_file", "dir", "write");
-	deny("runas", "security_spota_file", "file", "read");
-	deny("runas", "security_spota_file", "file", "write");
-	deny("drsd", "security_spota_file", "dir", "read");
-	deny("drsd", "security_spota_file", "dir", "write");
-	deny("drsd", "security_spota_file", "file", "read");
-	deny("drsd", "security_spota_file", "file", "write");
-	deny("debuggerd", "security_spota_file", "dir", "read");
-	deny("debuggerd", "security_spota_file", "dir", "write");
-	deny("debuggerd", "security_spota_file", "file", "read");
-	deny("debuggerd", "security_spota_file", "file", "write");
-	deny("vold", "security_spota_file", "dir", "read");
-	deny("vold", "security_spota_file", "dir", "write");
-	deny("vold", "security_spota_file", "file", "read");
-	deny("vold", "security_spota_file", "file", "write");
-	deny("zygote", "security_spota_file", "dir", "read");
-	deny("zygote", "security_spota_file", "dir", "write");
-	deny("zygote", "security_spota_file", "file", "read");
-	deny("zygote", "security_spota_file", "file", "write");
-	deny("auditd", "security_spota_file", "dir", "read");
-	deny("auditd", "security_spota_file", "dir", "write");
-	deny("auditd", "security_spota_file", "file", "read");
-	deny("auditd", "security_spota_file", "file", "write");
-	deny("servicemanager", "security_spota_file", "dir", "read");
-	deny("servicemanager", "security_spota_file", "dir", "write");
-	deny("servicemanager", "security_spota_file", "file", "read");
-	deny("servicemanager", "security_spota_file", "file", "write");
-	deny("itsonbs", "security_spota_file", "dir", "read");
-	deny("itsonbs", "security_spota_file", "dir", "write");
-	deny("itsonbs", "security_spota_file", "file", "read");
-	deny("itsonbs", "security_spota_file", "file", "write");
-	deny("commonplatformappdomain", "security_spota_file", "dir", "read");
-	deny("commonplatformappdomain", "security_spota_file", "dir", "write");
-	deny("commonplatformappdomain", "security_spota_file", "file", "read");
-	deny("commonplatformappdomain", "security_spota_file", "file", "write");
+	sepol_deny("init", "kernel", "security", "load_policy");
+	sepol_deny("policyloader_app", "security_spota_file", "dir", "read");
+	sepol_deny("policyloader_app", "security_spota_file", "dir", "write");
+	sepol_deny("policyloader_app", "security_spota_file", "file", "read");
+	sepol_deny("policyloader_app", "security_spota_file", "file", "write");
+	sepol_deny("system_server", "security_spota_file", "dir", "read");
+	sepol_deny("system_server", "security_spota_file", "dir", "write");
+	sepol_deny("system_server", "security_spota_file", "file", "read");
+	sepol_deny("system_server", "security_spota_file", "file", "write");
+	sepol_deny("system_app", "security_spota_file", "dir", "read");
+	sepol_deny("system_app", "security_spota_file", "dir", "write");
+	sepol_deny("system_app", "security_spota_file", "file", "read");
+	sepol_deny("system_app", "security_spota_file", "file", "write");
+	sepol_deny("installd", "security_spota_file", "dir", "read");
+	sepol_deny("installd", "security_spota_file", "dir", "write");
+	sepol_deny("installd", "security_spota_file", "file", "read");
+	sepol_deny("installd", "security_spota_file", "file", "write");
+	sepol_deny("init", "security_spota_file", "dir", "read");
+	sepol_deny("init", "security_spota_file", "dir", "write");
+	sepol_deny("init", "security_spota_file", "file", "read");
+	sepol_deny("init", "security_spota_file", "file", "write");
+	sepol_deny("ueventd", "security_spota_file", "dir", "read");
+	sepol_deny("ueventd", "security_spota_file", "dir", "write");
+	sepol_deny("ueventd", "security_spota_file", "file", "read");
+	sepol_deny("ueventd", "security_spota_file", "file", "write");
+	sepol_deny("runas", "security_spota_file", "dir", "read");
+	sepol_deny("runas", "security_spota_file", "dir", "write");
+	sepol_deny("runas", "security_spota_file", "file", "read");
+	sepol_deny("runas", "security_spota_file", "file", "write");
+	sepol_deny("drsd", "security_spota_file", "dir", "read");
+	sepol_deny("drsd", "security_spota_file", "dir", "write");
+	sepol_deny("drsd", "security_spota_file", "file", "read");
+	sepol_deny("drsd", "security_spota_file", "file", "write");
+	sepol_deny("debuggerd", "security_spota_file", "dir", "read");
+	sepol_deny("debuggerd", "security_spota_file", "dir", "write");
+	sepol_deny("debuggerd", "security_spota_file", "file", "read");
+	sepol_deny("debuggerd", "security_spota_file", "file", "write");
+	sepol_deny("vold", "security_spota_file", "dir", "read");
+	sepol_deny("vold", "security_spota_file", "dir", "write");
+	sepol_deny("vold", "security_spota_file", "file", "read");
+	sepol_deny("vold", "security_spota_file", "file", "write");
+	sepol_deny("zygote", "security_spota_file", "dir", "read");
+	sepol_deny("zygote", "security_spota_file", "dir", "write");
+	sepol_deny("zygote", "security_spota_file", "file", "read");
+	sepol_deny("zygote", "security_spota_file", "file", "write");
+	sepol_deny("auditd", "security_spota_file", "dir", "read");
+	sepol_deny("auditd", "security_spota_file", "dir", "write");
+	sepol_deny("auditd", "security_spota_file", "file", "read");
+	sepol_deny("auditd", "security_spota_file", "file", "write");
+	sepol_deny("servicemanager", "security_spota_file", "dir", "read");
+	sepol_deny("servicemanager", "security_spota_file", "dir", "write");
+	sepol_deny("servicemanager", "security_spota_file", "file", "read");
+	sepol_deny("servicemanager", "security_spota_file", "file", "write");
+	sepol_deny("itsonbs", "security_spota_file", "dir", "read");
+	sepol_deny("itsonbs", "security_spota_file", "dir", "write");
+	sepol_deny("itsonbs", "security_spota_file", "file", "read");
+	sepol_deny("itsonbs", "security_spota_file", "file", "write");
+	sepol_deny("commonplatformappdomain", "security_spota_file", "dir", "read");
+	sepol_deny("commonplatformappdomain", "security_spota_file", "dir", "write");
+	sepol_deny("commonplatformappdomain", "security_spota_file", "file", "read");
+	sepol_deny("commonplatformappdomain", "security_spota_file", "file", "write");
 }
 
 void allowSuClient(char *target) {
-	allow(target, "rootfs", "file", "execute_no_trans");
-	allow(target, "rootfs", "file", "execute");
-	allow(target, "su", "unix_stream_socket", "connectto");
-	allow(target, "su", "unix_stream_socket", "getopt");
-	allow(target, "su_device", "dir", "search");
-	allow(target, "su_device", "dir", "read");
-	allow(target, "su_device", "sock_file", "read");
-	allow(target, "su_device", "sock_file", "write");
+	sepol_allow(target, "rootfs", "file", ALL);
+	sepol_allow(target, "rootfs", "lnk_file", ALL);
+	sepol_allow(target, "su", "unix_stream_socket", "connectto");
+	sepol_allow(target, "su", "unix_stream_socket", "getopt");
+	sepol_allow(target, "su_device", "dir", "search");
+	sepol_allow(target, "su_device", "dir", "read");
+	sepol_allow(target, "su_device", "sock_file", "read");
+	sepol_allow(target, "su_device", "sock_file", "write");
+	sepol_allow(target, "devpts", "chr_file", "ioctl");
+	sepol_allow("su", target, "fd", "use");
+	sepol_allow("su", target, "fifo_file", ALL);
 }
 
 void suRights() {
-	allow("servicemanager", "su", "dir", "search");
-	allow("servicemanager", "su", "dir", "read");
-	allow("servicemanager", "su", "file", "open");
-	allow("servicemanager", "su", "file", "read");
-	allow("servicemanager", "su", "process", "getattr");
-	allow("servicemanager", "su", "binder", "transfer");
-	allow("system_server", "su", "binder", "call");
+	sepol_allow("servicemanager", "su", "dir", "search");
+	sepol_allow("servicemanager", "su", "dir", "read");
+	sepol_allow("servicemanager", "su", "file", "open");
+	sepol_allow("servicemanager", "su", "file", "read");
+	sepol_allow("servicemanager", "su", "process", "getattr");
+	sepol_allow("servicemanager", "su", "binder", "transfer");
+	sepol_allow("system_server", "su", "binder", "call");
+	sepol_allow("system_server", "su", "fd", "use");
+
+	sepol_allow("su", "servicemanager", "dir", "search");
+	sepol_allow("su", "servicemanager", "dir", "read");
+	sepol_allow("su", "servicemanager", "file", "open");
+	sepol_allow("su", "servicemanager", "file", "read");
+	sepol_allow("su", "servicemanager", "process", "getattr");
+	sepol_allow("su", "servicemanager", "binder", "transfer");
+	sepol_allow("su", "servicemanager", "binder", "call");
+	sepol_allow("su", "system_server", "binder", "transfer");
+	sepol_allow("su", "system_server", "binder", "call");
 }
 
 void otherToSU() {
 	// allowLog
-	allow("logd", "su", "dir", "search");
-	allow("logd", "su", "file", "read");
-	allow("logd", "su", "file", "open");
-	allow("logd", "su", "file", "getattr");
+	sepol_allow("logd", "su", "dir", "search");
+	sepol_allow("logd", "su", "file", "read");
+	sepol_allow("logd", "su", "file", "open");
+	sepol_allow("logd", "su", "file", "getattr");
 
 	// suBackL0
-	allow("system_server", "su", "binder", "call");
-	allow("system_server", "su", "binder", "transfer");
+	sepol_allow("system_server", "su", "binder", "call");
+	sepol_allow("system_server", "su", "binder", "transfer");
 
 	// ES Explorer opens a sokcet
-	allow("untrusted_app", "su", "unix_stream_socket", "ioctl");
-	allow("untrusted_app", "su", "unix_stream_socket", "read");
-	allow("untrusted_app", "su", "unix_stream_socket", "getattr");
-	allow("untrusted_app", "su", "unix_stream_socket", "write");
-	allow("untrusted_app", "su", "unix_stream_socket", "setattr");
-	allow("untrusted_app", "su", "unix_stream_socket", "lock");
-	allow("untrusted_app", "su", "unix_stream_socket", "append");
-	allow("untrusted_app", "su", "unix_stream_socket", "bind");
-	allow("untrusted_app", "su", "unix_stream_socket", "connect");
-	allow("untrusted_app", "su", "unix_stream_socket", "getopt");
-	allow("untrusted_app", "su", "unix_stream_socket", "setopt");
-	allow("untrusted_app", "su", "unix_stream_socket", "shutdown");
-	allow("untrusted_app", "su", "unix_stream_socket", "connectto");
+	sepol_allow("untrusted_app", "su", "unix_stream_socket", "ioctl");
+	sepol_allow("untrusted_app", "su", "unix_stream_socket", "read");
+	sepol_allow("untrusted_app", "su", "unix_stream_socket", "getattr");
+	sepol_allow("untrusted_app", "su", "unix_stream_socket", "write");
+	sepol_allow("untrusted_app", "su", "unix_stream_socket", "setattr");
+	sepol_allow("untrusted_app", "su", "unix_stream_socket", "lock");
+	sepol_allow("untrusted_app", "su", "unix_stream_socket", "append");
+	sepol_allow("untrusted_app", "su", "unix_stream_socket", "bind");
+	sepol_allow("untrusted_app", "su", "unix_stream_socket", "connect");
+	sepol_allow("untrusted_app", "su", "unix_stream_socket", "getopt");
+	sepol_allow("untrusted_app", "su", "unix_stream_socket", "setopt");
+	sepol_allow("untrusted_app", "su", "unix_stream_socket", "shutdown");
+	sepol_allow("untrusted_app", "su", "unix_stream_socket", "connectto");
 
 	// Any domain is allowed to send su "sigchld"
-	allow(ALL, "su", "process", "sigchld");
+	sepol_allow(ALL, "su", "process", "sigchld");
 
 	// uNetworkL0
-	attradd("su", "netdomain");
-	attradd("su", "bluetoothdomain");
+	sepol_attradd("su", "netdomain");
+	sepol_attradd("su", "bluetoothdomain");
 
 	// suBackL6
-	allow("surfaceflinger", "app_data_file", "dir", ALL);
-	allow("surfaceflinger", "app_data_file", "file", ALL);
-	allow("surfaceflinger", "app_data_file", "lnk_file", ALL);
-	attradd("surfaceflinger", "mlstrustedsubject");
+	sepol_allow("surfaceflinger", "app_data_file", "dir", ALL);
+	sepol_allow("surfaceflinger", "app_data_file", "file", ALL);
+	sepol_allow("surfaceflinger", "app_data_file", "lnk_file", ALL);
+	sepol_attradd("surfaceflinger", "mlstrustedsubject");
 
 	// suMiscL6
-	if (exists("audioserver"))
-		allow("audioserver", "audioserver", "process", "execmem");
+	if (sepol_exists("audioserver"))
+		sepol_allow("audioserver", "audioserver", "process", "execmem");
 }
 
-void su_rules() {
+// Minimal boot image patch, Samsung requires these patches
+void sepol_min_rules() {
+	if (!sepol_exists("su"))
+		sepol_create("su");
+	if (!sepol_exists("su_device"))
+		sepol_create("su_device");
+	sepol_permissive("su");
+	sepol_permissive("init");
+
+	sepol_attradd("su", "mlstrustedsubject");
+	sepol_attradd("su_device", "mlstrustedobject");
+
+	// Let init run stuffs in su context
+	sepol_allow("kernel", "su", "fd", "use");
+	sepol_allow("init", "su", "process", ALL);
+	sepol_allow("init", "system_file", "dir", ALL);
+	sepol_allow("init", "system_file", "lnk_file", ALL);
+	sepol_allow("init", "system_file", "file", ALL);
+
 	// Samsung specific
 	// Prevent system from loading policy
-	if(exists("knox_system_app"))
+	if(sepol_exists("knox_system_app"))
 		samsung();
 
-	// Create domains if they don't exist
-	if (!exists("su"))
-		create("su");
-	permissive("su");
-	if (!exists("su_device"))
-		create("su_device");
-	enforce("su_device");
+	// Shell, prop management, simple su rights, logs
+	sepol_allow("su", "property_socket", "sock_file", "write");
+	sepol_allow("su", "properties_device", "file", "write");
+	if (sepol_exists("default_prop")) {
+		sepol_allow("su", "default_prop", "property_service", "set");
+		sepol_allow("su", "default_prop", "file", "write");
+	}
+	if (sepol_exists("properties_serial"))
+		sepol_allow("su", "properties_serial", "file", "write");
+	sepol_allow("su", "init", "unix_stream_socket", "connectto");
+	sepol_allow("su", "rootfs", "file", "entrypoint");
+	sepol_allow("su", "rootfs", "file", "getattr");
+	sepol_allow("su", "rootfs", "file", "read");
+	sepol_allow("su", "rootfs", "filesystem", "remount");
+	sepol_allow("su", "devpts", "chr_file", ALL);
+	sepol_allow("su", "untrusted_app_devpts", "chr_file", ALL);
+	sepol_allow("su", "su_device", "dir", ALL);
+	sepol_allow("su", "su_device", "sock_file", ALL);
+	sepol_allow("su", "zygote_exec", "file", ALL);
+	sepol_allow("su", "zygote_exec", "lnk_file", ALL);
+	sepol_allow("su", "app_data_file", "dir", ALL);
+	sepol_allow("su", "app_data_file", "file", ALL);
+	sepol_allow("su", "shell_exec", "file", ALL);
+	sepol_allow("su", "su", "unix_dgram_socket", ALL);
+	sepol_allow("su", "su", "unix_stream_socket", ALL);
+	sepol_allow("su", "su", "process", ALL);
+	sepol_allow("su", "su", "capability", ALL);
+	sepol_allow("su", "su", "file", ALL);
+	sepol_allow("su", "su", "fifo_file", ALL);
+	sepol_allow("su", "su", "lnk_file", ALL);
+	sepol_allow("su", "su", "dir", ALL);
+	if (sepol_exists("toolbox_exec"))
+		sepol_allow("su", "toolbox_exec", "file", ALL);
+	if (sepol_exists("logdr_socket"))
+		sepol_allow("su", "logdr_socket", "sock_file", "write");
+	if (sepol_exists("logd"))
+		sepol_allow("su", "logd", "unix_stream_socket", "connectto");
+	sepol_allow("su_device", "tmpfs", "filesystem", "associate");
+	sepol_allow(ALL, "labeledfs", "filesystem", "associate");
+	sepol_allow(ALL, "tmpfs", "filesystem", "associate");
 
-	// Patch su to everything
-	allow("su", ALL, ALL, ALL);
+	// For sepolicy live patching
+	sepol_allow("su", "kernel", "security", "read_policy");
+	sepol_allow("su", "kernel", "security", "load_policy");
+	sepol_allow("su", "selinuxfs", "file", "read");
+	sepol_allow("su", "selinuxfs", "file", "open");
+	sepol_allow("su", "selinuxfs", "file", "write");
 
-	// Autotransition su's socket to su_device
-	add_transition("su", "device", "file", "su_device");
-	add_transition("su", "device", "dir", "su_device");
-	allow("su_device", "tmpfs", "filesystem", "associate");
+	// For mounting loop devices and mirrors
+	sepol_allow("su", "kernel", "process", "setsched");
+	sepol_allow("su", "labeledfs", "filesystem", "mount");
+	sepol_allow("su", "labeledfs", "filesystem", "unmount");
+	sepol_allow("kernel", "system_data_file", "file", "read");
 
-	// Transition from untrusted_app to su_client
+	// Xposed
+	sepol_allow("untrusted_app", "untrusted_app", "capability", "setgid");
+	sepol_allow("system_server", "dex2oat_exec", "file", ALL);
+
+	// xperms
+	if (policydb->policyvers >= 30)
+		sepol_allowxperm("domain", "devpts", "chr_file", "0x5400-0x54FF");
+}
+
+void sepol_med_rules() {
+	sepol_min_rules();
+
+	// Allow su to do anything to any files/dir/links
+	sepol_allow("su", ALL, "file", ALL);
+	sepol_allow("su", ALL, "dir", ALL);
+	sepol_allow("su", ALL, "lnk_file", ALL);
+	sepol_allow("su", ALL, "blk_file", ALL);
+
+	// Allow these client to access su
 	allowSuClient("shell");
 	allowSuClient("untrusted_app");
 	allowSuClient("system_app");
 	allowSuClient("platform_app");
-	if (exists("priv_app"))
+	if (sepol_exists("priv_app"))
 		allowSuClient("priv_app");
-	if (exists("ssd_tool"))
+	if (sepol_exists("ssd_tool"))
 		allowSuClient("ssd_tool");
+	if (sepol_exists("untrusted_app_25"))
+		allowSuClient("untrusted_app_25");
 
-	// Allow init to execute su daemon/transition
-	allow("init", "su", "process", "transition");
-	allow("init", "su", "process", "rlimitinh");
-	allow("init", "su", "process", "siginh");
-	allow("init", "su", "process", "noatsecure");
 	suRights();
 	otherToSU();
-
-	// Need to set su_device/su as trusted to be accessible from other categories
-	attradd("su_device", "mlstrustedobject");
-	attradd("su", "mlstrustedsubject");
-
-	// Allow chcon to anything
-	allow(ALL, "labeledfs", "filesystem", "associate");
 }
 
-// Minimal to run Magisk script before live patching
-void min_rules() {
-
-	if (!exists("su"))
-		create("su");
-	permissive("su");
-	permissive("init");
-
-	attradd("su", "mlstrustedsubject");
-
-	allow("kernel", "su", "fd", "use");
-	allow("init", "su", "process", ALL);
-	allow("init", "system_file", "dir", ALL);
-	allow("init", "system_file", "lnk_file", ALL);
-	allow("init", "system_file", "file", ALL);
-
-	allow("su", "property_socket", "sock_file", "write");
-	allow("su", "shell_exec", "file", ALL);
-	allow("su", "init", "unix_stream_socket", "connectto");
-	allow("su", "su", "unix_dgram_socket", ALL);
-	allow("su", "su", "unix_stream_socket", ALL);
-	allow("su", "su", "process", ALL);
-	allow("su", "su", "capability", ALL);
-	allow("su", "su", "file", ALL);
-	allow("su", "su", "fifo_file", ALL);
-	allow("su", "su", "lnk_file", ALL);
-	allow("su", "su", "dir", ALL);
-
-	// vold, bootanim, surfaceflinger might require mounts in multirom
-	allow("su", "vold_exec", "file", ALL);
-	allow("su", "bootanim_exec", "file", ALL);
-	allow("su", "surfaceflinger_exec", "file", ALL);
-
-	// Access toolbox/toybox tools
-	allow("su", "toolbox_exec", "file", ALL);
-	allow("su", "toolbox_exec", "lnk_file", ALL);
-
-	// For /dev 
-	allow("su", "device", "file", ALL);
-	allow("su", "device", "fifo_file", ALL);
-	allow("su", "device", "lnk_file", ALL);
-	allow("su", "device", "dir", ALL);
-
-	// For rootfs
-	allow("su", "rootfs", "file", ALL);
-	allow("su", "rootfs", "fifo_file", ALL);
-	allow("su", "rootfs", "lnk_file", ALL);
-	allow("su", "rootfs", "dir", ALL);
-
-	// For system/cache/data files
-	allow("su", "system_file", "file", ALL);
-	allow("su", "system_file", "fifo_file", ALL);
-	allow("su", "system_file", "lnk_file", ALL);
-	allow("su", "system_file", "dir", ALL);
-	allow("su", "system_data_file", "file", ALL);
-	allow("su", "system_data_file", "fifo_file", ALL);
-	allow("su", "system_data_file", "lnk_file", ALL);
-	allow("su", "system_data_file", "dir", ALL);
-	allow("su", "cache_file", "file", ALL);
-	allow("su", "cache_file", "fifo_file", ALL);
-	allow("su", "cache_file", "lnk_file", ALL);
-	allow("su", "cache_file", "dir", ALL);
-
-	// For sepolicy live patching
-	allow("su", "kernel", "security", "read_policy");
-	allow("su", "kernel", "security", "load_policy");
-	allow("su", "selinuxfs", "file", ALL);
-
-	// For detecting current mount status
-	allow("su", "storage_file", "file", ALL);
-	allow("su", "storage_file", "fifo_file", ALL);
-	allow("su", "storage_file", "lnk_file", ALL);
-	allow("su", "storage_file", "dir", ALL);
-	allow("su", "sysfs", "file", ALL);
-	allow("su", "sysfs", "fifo_file", ALL);
-	allow("su", "sysfs", "lnk_file", ALL);
-	allow("su", "sysfs", "dir", ALL);
-	allow("su", "block_device", "file", ALL);
-	allow("su", "block_device", "fifo_file", ALL);
-	allow("su", "block_device", "lnk_file", ALL);
-	allow("su", "block_device", "dir", ALL);
-	
-	// Xposed
-	allow("untrusted_app", "untrusted_app", "capability", "setgid");
-	allow("system_server", "dex2oat_exec", "file", ALL);
-
-	// SuperSU
-	allow("init", "system_file", "file", "execute_no_trans");
-	allow("init", "su", "fd", "use");
-	allow("init", "kernel", "security", "read_policy");
-	allow("init", "kernel", "security", "load_policy");
+void sepol_full_rules() {
+	// Patch su to everything
+	sepol_allow("su", ALL, ALL, ALL);
 }
+

@@ -1,5 +1,8 @@
-#ifndef SEPOLICY_INJECT_H
-#define SEPOLICY_INJECT_H
+/* sepolicy.h - Header for magiskpolicy non-public APIs
+ */
+
+#ifndef _SEPOLICY_H
+#define _SEPOLICY_H
 
 #define ALL NULL
 
@@ -22,48 +25,25 @@
 #include <sepol/policydb/conditional.h>
 #include <sepol/policydb/constraint.h>
 
+#include "vector.h"
+
 // hashtab traversal macro
 #define hashtab_for_each(table, ptr) \
 	for (int _i = 0; _i < table->size; ++_i) \
 		for (*ptr = table->htable[_i]; *ptr != NULL; *ptr = (*ptr)->next)
 
 // Global policydb
-policydb_t *policy;
+extern policydb_t *policydb;
 
 // sepolicy manipulation functions
-int load_policy(const char *filename);
-int dump_policy(const char *filename);
 int create_domain(char *d);
 int set_domain_state(char* s, int state);
 int add_transition(char *s, char *t, char *c, char *d);
 int add_file_transition(char *s, char *t, char *c, char *d, char* filename);
 int add_typeattribute(char *domainS, char *attr);
 int add_rule(char *s, char *t, char *c, char *p, int effect, int not);
+int add_xperm_rule(char *s, char *t, char *c, char *range, int effect, int not);
 
-// Handy functions
-int allow(char *s, char *t, char *c, char *p);
-int deny(char *s, char *t, char *c, char *p);
-int auditallow(char *s, char *t, char *c, char *p);
-int auditdeny(char *s, char *t, char *c, char *p);
-int typetrans(char *s, char *t, char *c, char *d, char *o);
-int create(char *s);
-int permissive(char *s);
-int enforce(char *s);
-int attradd(char *s, char *a);
-int exists(char *source);
-
-// Vector of char*
-typedef struct vector {
-	size_t size;
-	size_t cap;
-	char **data;
-} vector;
-void vec_init(vector *v);
-void vec_push_back(vector *v, char* s);
-void vec_destroy(vector *v);
-
-// Built in rules
-void su_rules();
-void min_rules();
+extern int policydb_index_decls(sepol_handle_t * handle, policydb_t * p);
 
 #endif
